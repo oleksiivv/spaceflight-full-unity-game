@@ -75,9 +75,9 @@ public class EarthController : MonoBehaviour
                     //if(/*BaseUI.addCnt%2==1*/true){
                         if(!admob.showIntersitionalAd())
                         {
-                            if(Advertisement.IsReady("Android_Interstitial")){
+                            //if(Advertisement.IsReady("Android_Interstitial")){
                                 Advertisement.Show("Android_Interstitial");
-                            }
+                            //}
                         }
                     //}
                     BaseUI.addCnt++;

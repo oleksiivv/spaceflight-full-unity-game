@@ -29,9 +29,9 @@ public class BaseUI : MonoBehaviour
         pausePanel.SetActive(true);
 
         if(addCnt%2==1){
-            if(Advertisement.IsReady("Android_Interstitial")){
+            //if(Advertisement.IsReady("Android_Interstitial")){
                 Advertisement.Show("Android_Interstitial");
-            }
+            //}
             // else{
             //     admob.showIntersitionalAd();
             // }
