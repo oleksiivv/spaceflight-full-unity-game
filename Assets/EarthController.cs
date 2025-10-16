@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
 
 public class EarthController : MonoBehaviour
 {
@@ -24,7 +23,6 @@ public class EarthController : MonoBehaviour
     private string gameID="4180651";
 #endif
 
-
     private bool showed=false;
 
     public AdmobController admob;
@@ -35,7 +33,6 @@ public class EarthController : MonoBehaviour
     void Start()
     {
         showed=false;
-        Advertisement.Initialize(gameID,false);
 
         alive=true;
         healthValue=100;
@@ -53,8 +50,6 @@ public class EarthController : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag=="Enemy"){
-            
-
             if(healthValue>0){
                 damageEffect.Play();
                 animator.SetBool("damage",true);
@@ -72,15 +67,7 @@ public class EarthController : MonoBehaviour
 
                     Invoke(nameof(showDeathPanel),1.3f);
 
-                    //if(/*BaseUI.addCnt%2==1*/true){
-                        if(!admob.showIntersitionalAd())
-                        {
-                            if(Advertisement.IsReady("Android_Interstitial")){
-                                Advertisement.Show("Android_Interstitial");
-                            }
-                        }
-                    //}
-                    BaseUI.addCnt++;
+                    admob.ShowIntersitionalAd();
 
                     showed=true;
                 }

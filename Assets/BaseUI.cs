@@ -21,7 +21,6 @@ public class BaseUI : MonoBehaviour
 
     void Start(){
         Application.targetFrameRate = 45;
-        Advertisement.Initialize(gameID,false);
     }
 
     public void pause(){
@@ -29,12 +28,7 @@ public class BaseUI : MonoBehaviour
         pausePanel.SetActive(true);
 
         if(addCnt%2==1){
-            if(Advertisement.IsReady("Android_Interstitial")){
-                Advertisement.Show("Android_Interstitial");
-            }
-            // else{
-            //     admob.showIntersitionalAd();
-            // }
+            //todo interstitial
         }
         addCnt++;
     }
