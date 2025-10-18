@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Advertisements;
+// using UnityEngine.Advertisements;
 
 public class BaseUI : MonoBehaviour
 {
@@ -19,8 +19,19 @@ public class BaseUI : MonoBehaviour
 
     public AdmobController admob;
 
-    void Start(){
-        Application.targetFrameRate = 45;
+    void Start()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 50;
+    }
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.timeScale == 0) Time.timeScale = 1;
+            else Time.timeScale = 0;
+        }
     }
 
     public void pause(){

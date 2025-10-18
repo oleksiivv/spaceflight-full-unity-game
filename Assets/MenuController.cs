@@ -10,6 +10,9 @@ public class MenuController : MonoBehaviour
     public GameObject shop;
 
     void Start(){
+         QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 50;
+        
         hi.text="Best: "+PlayerPrefs.GetInt("best").ToString();
     }
     public void openScene(int id){
